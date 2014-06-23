@@ -1,14 +1,16 @@
-# closeness
+# Closeness Centrality
 
-A Clojure library designed to ... well, that part is up to you.
+Calculates the closeness centrality of a given graph(located @
+resources/edges).
 
 ## Usage
 
-FIXME
+Just run lein deps && lein run
+
+## Testing
+
+There's basic test cases which I used to guide me to my solution.
 
 ## License
 
-Copyright © 2014 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+MIT
