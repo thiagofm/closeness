@@ -30,7 +30,7 @@
 ; Discovers the vertices given a hashmap with the edges and it's weight
 (defn discover-vertices [edges]
   (vec (sort (distinct (flatten
-          (map (fn [e] (first e) ) edges))))))
+          (map first edges))))))
 
 ; Gets all paths from a vertice of a hashmap with paths
 (defn get-all-paths-from-vertice [vertice paths]
@@ -38,8 +38,7 @@
 
 ; Sum the weights for some paths
 (defn sum-all-weights-from-paths [paths]
-  (reduce + (map (fn [path]
-         (last path)) paths)))
+  (reduce + (map last paths)))
 
 ; Creates a graph with the given edges and weights in the form of:
 ; {[node1 node2] w}
@@ -69,7 +68,7 @@
     (doall (line-seq rdr))))
 
 (defn parse-line[line]
-  (vec (map (fn[l] (read-string l)) (clojure.string/split line #"\s+")))) 
+  (vec (map read-string (clojure.string/split line #"\s+")))) 
 
 ; Creates a graph with the given edges and weights in the form of:
 ; {[node1 node2] w}
